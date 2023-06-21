@@ -8,7 +8,10 @@ include_directories(".")
  
 # Add sources
 set(cppsrc 
-	src/control_main_framework.cpp)
+	src/control_main_framework.cpp
+	src/base_controller.cpp
+	src/joint_controller.cpp
+	src/pid_controller.cpp)
 
 add_library(ControlMainFrameworkSystem SHARED ${cppsrc})
 

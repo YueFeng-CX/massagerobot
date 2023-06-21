@@ -1,0 +1,6 @@
+#ifndef JOINTCONFIG_HPP_
+#define JOINTCONFIG_HPP_
+
+#define JOINTNUMBER 6
+
+#endif /*JOINTCONFIG_HPP_*/

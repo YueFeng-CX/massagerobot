@@ -6,8 +6,8 @@
  */
 
 #include <iostream>
-
 #include <include/control_main_framework.hpp>
+#include <include/pid_controller.hpp>
 
 namespace YF
 {
@@ -22,33 +22,32 @@ namespace YF
 			gz::sim::EntityComponentManager &_ecm,
 			gz::sim::EventManager &_eventMgr)
 	{
-		/// Configure is called after the system is instantiated and all entities
-		/// and components are loaded from the corresponding SDF world, and before
-		/// simulation begins exectution.
-		std::cout << "configure" << std::endl;
+		jointController_sharePtr.reset(new PIDController());
+		jointController_sharePtr->Configure(_entity, _sdf, _ecm, _eventMgr);
 	}
 
     void MainFrameworkSystem::PreUpdate(const gz::sim::UpdateInfo &_info,
                 gz::sim::EntityComponentManager &_ecm)
     {
-    	// Apply forces / torques
-    	//ignition::gazebo::Joint::SetForce
     	if(not _info.paused)
-    		std::cout << "PreUpdate" << std::endl;
+    	{
+    		jointController_sharePtr->PreUpdate(_info, _ecm);
+    	}
     }
 
     void MainFrameworkSystem::PostUpdate(const gz::sim::UpdateInfo &_info,
                 const gz::sim::EntityComponentManager &_ecm)
     {
-    	// Get and process data every time step from sensors (robot state)
+
     	if(not _info.paused)
-    		std::cout << "PostUpdate" << std::endl;
+    	{
+    		jointController_sharePtr->PostUpdate(_info, _ecm);
+    	}
     }
 
     void MainFrameworkSystem::Reset(const gz::sim::UpdateInfo &_info,
                  gz::sim::EntityComponentManager &_ecm)
     {
-    	// Called when reset world
     	std::cout << "Reset" << std::endl;
     }
 
