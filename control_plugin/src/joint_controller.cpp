@@ -77,6 +77,8 @@ namespace YF
 			          << ", " << _jointVelocities[2] << ", " << _jointVelocities[3]
 					  << ", " << _jointVelocities[4] << ", " << _jointVelocities[5] << std::endl;
 
+			//gz::sim::components::DepthCamera
+
 		}
 
 		void JointsController::SetJointTorque(uint64_t index, double torque)

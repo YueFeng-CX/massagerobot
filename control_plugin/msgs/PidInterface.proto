@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package msgs;
+
+message PIDControllerTarget 
+{
+	repeated double pidTarget = 1;
+	repeated double kp = 2;
+	repeated double kd = 3;
+}

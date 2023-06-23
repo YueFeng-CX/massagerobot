@@ -38,7 +38,6 @@ namespace YF
     void MainFrameworkSystem::PostUpdate(const gz::sim::UpdateInfo &_info,
                 const gz::sim::EntityComponentManager &_ecm)
     {
-
     	if(not _info.paused)
     	{
     		jointController_sharePtr->PostUpdate(_info, _ecm);

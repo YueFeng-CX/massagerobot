@@ -73,9 +73,9 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/cx/GazeboFiles/models/fr5_robotic_arm</uri>
+      <uri>file:///home/cx/Desktop/massagerobot/control_plugin/resources/models/fr5_robotic_arm</uri>
       <name>FR5urdf</name>
-      <pose>-0.68934992341712142 -1.2875498838444697 0 0 0 0</pose>
+      <pose>0 0 1 0 0 0</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>

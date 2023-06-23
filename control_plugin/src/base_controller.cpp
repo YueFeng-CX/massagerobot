@@ -13,6 +13,11 @@ namespace YF
 	{
 
 	}
+
+	BaseController::~BaseController()
+	{
+
+	}
 }
 
 

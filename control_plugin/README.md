@@ -20,3 +20,4 @@ Gazebo世界模型构建流程
 
     配置插件位置GZ_SIM_SYSTEM_PLUGIN_PATH使其找到libControlMainFrameworkSystem.so库
 5. 运行gz sim massage_robot.sdf
+6. PidUserInterface程序，发送目标位置到机械臂
